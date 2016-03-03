@@ -22,19 +22,17 @@ export default class App extends Component {
     let json = await res.json()
     console.log(json) // 受け取った内容がコンソールに出力される
     this.setState({
-      data: json
+      data: json.data
     })
   }
 
   render() {
-    let popularProject
-    if(this.state.data) {
-      popularProject = this.state.data.data.sections[3]
-    }
+    let data = this.state.data
+    let popularProject = data && data.sections[3]
     // 見た目の定義
     return(
       <div className={styles.container}>
-        {this.state.data ? (
+        {data ? (
             <PortalSlider>
               {
                 popularProject.projects.map((project) => {
