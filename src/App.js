@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
+import styles from './App.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -32,13 +33,18 @@ export default class App extends Component {
     }
     // 見た目の定義
     return(
-      <div>
+      <div className={styles.container}>
         {this.state.data ? (
             <PortalSlider>
-              {popularProject.projects.map((project) => {
-                return <PortalProject project={project} key={project.id} />
-              })}
-            </PortalSlider>):(<p>Now Loading...</p>)}
+              {
+                popularProject.projects.map((project) => {
+                  return <PortalProject project={project} key={project.id} />
+                })
+              }
+            </PortalSlider>
+        ):(
+          <p>Now Loading...</p>
+        )}
       </div>
     )
   }
