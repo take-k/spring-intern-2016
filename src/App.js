@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import PortalProjectList from './PortalProjectList'
+import PortalEmployeeInterview from './PortalEmployeeInterview'
 
 export default class App extends Component {
   constructor(props) {
@@ -29,13 +31,14 @@ export default class App extends Component {
   render() {
     let eyecatch
     let project_list
+    let interview
     let popularProject
 
     if(this.state.data) {
       eyecatch = this.state.data.data.sections[0]
       project_list = eyecatch.eyecatches[0].project_list
+      interview = eyecatch.eyecatches[1].employee_interview
       popularProject = this.state.data.data.sections[3]
-
     }
     // 見た目の定義
     /*return(
@@ -48,13 +51,21 @@ export default class App extends Component {
             </PortalSlider>):(<p>Now Loading...</p>)}
       </div>
     )*/
-    return(
+    /*return(
       <div>
         {this.state.data ? (
             <PortalProjectList project_list={eyecatch.eyecatches[0].project_list} key={project_list.id}>
             </PortalProjectList>
             ):(<p>Now Loading...</p>)}
       </div>
-    )
+    )*/
+    return (
+        <div>
+          {this.state.data ? (
+              <PortalEmployeeInterview interview={interview} key={interview.id}>
+              </PortalEmployeeInterview>
+              ):(<p>Now Loading...</p>)}
+          </div>
+        )
   }
 }
