@@ -19,6 +19,7 @@ export default class PortalPanel extends Component {
     return (
         <div className={styles.base}>
           {
+            //<div className="backButton"
             this.props.children.map((child, index) => {
               return <div style={this.calcStyle(index)} key={index} className={styles.item}>
               {child}
