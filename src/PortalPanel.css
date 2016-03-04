@@ -1,0 +1,7 @@
+.base {
+  position: relative;
+}
+.item {
+  position: absolute;
+  left: 0;
+}

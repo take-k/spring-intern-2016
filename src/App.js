@@ -4,6 +4,7 @@ import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import PortalProjectList from './PortalProjectList'
 import PortalEmployeeInterview from './PortalEmployeeInterview'
+import PortalPanel from './PortalPanel'
 
 export default class App extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ export default class App extends Component {
       popularProject = this.state.data.data.sections[3]
     }
     // 見た目の定義
-    /*return(
+    /*return(i
       <div>
         {this.state.data ? (
             <PortalSlider>
@@ -59,13 +60,23 @@ export default class App extends Component {
             ):(<p>Now Loading...</p>)}
       </div>
     )*/
-    return (
+    /*return (
         <div>
           {this.state.data ? (
               <PortalEmployeeInterview interview={interview} key={interview.id}>
               </PortalEmployeeInterview>
               ):(<p>Now Loading...</p>)}
           </div>
-        )
+        )*/
+    return(
+      <div>
+        {this.state.data ? (
+            <PortalPanel>
+              {popularProject.projects.map((project) => {
+                return <PortalProject project={project} key={project.id} />
+              })}
+            </PortalPanel>):(<p>Now Loading...</p>)}
+      </div>
+    )
   }
 }
