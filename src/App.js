@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
-import Banner from './Banner'
-
+import styles from './App.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -23,25 +22,52 @@ export default class App extends Component {
     let json = await res.json()
     console.log(json) // 受け取った内容がコンソールに出力される
     this.setState({
-      data: json
+      data: json.data
     })
   }
 
   render() {
-    let popularProject
-    if(this.state.data) {
-      popularProject = this.state.data.data.sections[3]
-    }
+    let data = this.state.data
+    let popularProject = data && data.sections[3]
+    let newgradProject = data && data.sections[4]
+    let internProject = data && data.sections[5]
     // 見た目の定義
     return(
-      <div>
-      
-        {this.state.data ? (
-            <PortalSlider>
-              {popularProject.projects.map((project) => {
-                return <PortalProject project={project} key={project.id} />
-              })}
-            </PortalSlider>):(<p>Now Loading...</p>)}
+      <div className={styles.container}>
+        {data ? (
+          <div>
+            <div className={styles.section}>
+              <PortalSlider>
+                {
+                  popularProject.projects.map((project) => {
+                    return <PortalProject project={project} key={project.id} />
+                  })
+                }
+              </PortalSlider>
+            </div>
+            <div className={styles.section}>
+              <PortalSlider>
+                {
+                  newgradProject.projects.map((project) => {
+                    return <PortalProject project={project} key={project.id} />
+                  })
+                }
+              </PortalSlider>
+            </div>
+            <div className={styles.section}>
+              <PortalSlider>
+                {
+                  internProject.projects.map((project) => {
+                    return <PortalProject project={project} key={project.id} />
+                  })
+                }
+              </PortalSlider>
+            </div>
+
+          </div>
+        ):(
+          <p>Now Loading...</p>
+        )}
       </div>
     )
   }

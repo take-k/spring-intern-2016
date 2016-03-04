@@ -5,9 +5,26 @@
 .item {
   position: absolute;
   left: 0;
-  top: -50;
+  top: 0;
+  transition: all 300ms ease;
 }
 
-.item {
-  transition: all 300ms ease;
+.prev {
+  position: absolute;
+  left: 0;
+  top: 220px;
+}
+
+.next {
+  position: absolute;
+  right:0;
+  top: 220px;
+}
+
+.box {
+  position: relative;
+  width:950px;
+  height: 450px;
+  margin:0 auto;
+  overflow: hidden;
 }
