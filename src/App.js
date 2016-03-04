@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import styles from './App.css'
+import SkyLight from 'react-skylight'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     // 状態の定義
-    this.state = { message: "Reactのシンプルなコンポーネントです" }
+    this.state = { message: "Reactのシンプルなコンポーネントです" , showProjectsPanel : false ,showDetailPanel:false}
   }
   componentDidMount() {
     this.fetchPortalData()
@@ -26,6 +27,18 @@ export default class App extends Component {
     })
   }
 
+  toggleProjectsPanel(){
+    this.setState({
+      showProjectsPanel:true
+    })
+  }
+
+  toggleDetailPanel(){
+    this.setState({
+      showDetailPanel:true
+    })
+  }
+
   render() {
     let data = this.state.data
     let popularProject = data && data.sections[3]
@@ -40,7 +53,7 @@ export default class App extends Component {
               <PortalSlider title={popularProject.title}>
                 {
                   popularProject.projects.map((project) => {
-                    return <PortalProject project={project} key={project.id} />
+                    return <div onClick={() => this.refs.simpleDialog.show()}><div onClick={this.toggleDetailPanel.bind(this)}><PortalProject project={project} key={project.id} /></div></div>
                   })
                 }
               </PortalSlider>
@@ -49,7 +62,7 @@ export default class App extends Component {
               <PortalSlider title={newgradProject.title}>
                 {
                   newgradProject.projects.map((project) => {
-                    return <PortalProject project={project} key={project.id} />
+                    return <div onClick={() => this.refs.simpleDialog.show()}><div onClick={this.toggleDetailPanel.bind(this)}><PortalProject project={project} key={project.id} /></div></div>
                   })
                 }
               </PortalSlider>
@@ -58,12 +71,15 @@ export default class App extends Component {
               <PortalSlider title={internProject.title}>
                 {
                   internProject.projects.map((project) => {
-                    return <PortalProject project={project} key={project.id} />
+                    return <div onClick={() => this.refs.simpleDialog.show()}><div onClick={this.toggleDetailPanel.bind(this)}><PortalProject project={project} key={project.id} /></div></div>
                   })
                 }
               </PortalSlider>
             </div>
 
+            <SkyLight hideOnOverlayClicked ref="simpleDialog" title="Hi, I'm a simple modal">
+              Hello, I dont have any callback.
+            </SkyLight>
           </div>
         ):(
           <p>Now Loading...</p>

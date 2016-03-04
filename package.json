@@ -47,6 +47,7 @@
     "express": "^4.13.3",
     "postcss-loader": "^0.8.1",
     "react-css-modules": "^3.7.5",
+    "react-skylight": "^0.3.0",
     "rimraf": "^2.4.3",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
