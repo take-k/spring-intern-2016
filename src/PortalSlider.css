@@ -2,12 +2,40 @@
   position: relative;
 }
 
-.item {
-  position: absolute;
-  left: 0;
-  top: -50;
+.label {
+  width:950px;
+  margin: 20px auto;
+  color: #999;
 }
 
 .item {
+  position: absolute;
+  left: 0;
+  top: 0;
   transition: all 300ms ease;
+}
+
+.prev {
+  position: absolute;
+  left: 5px;
+  top: 220px;
+}
+
+.next {
+  position: absolute;
+  right:5px;
+  top: 220px;
+}
+
+.button {
+  width:30px;
+
+}
+
+.box {
+  position: relative;
+  width:950px;
+  height: 450px;
+  margin:0 auto;
+  overflow: hidden;
 }
