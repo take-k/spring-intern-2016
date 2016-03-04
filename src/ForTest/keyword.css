@@ -1,0 +1,42 @@
+.sub-section{
+	background-color: #f5f5f5;
+    padding: 82px 0;
+}
+
+.section-inner {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.tags{
+	margin-bottom: 0px;
+    font-weight: 300;
+    list-style-type: none;
+    color: rgb(36,40,42);
+}
+
+.tag{
+	color: rgb(0,164,187);
+	cursor: auto;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 600px;
+	height: 22px;
+}
+
+.tag:hover{
+	opacity: 0.8;
+	color: #006F8E;
+}
+.tag a{
+	margin: 0,18px,12px,0;
+
+}
+
+h3{
+	font-weight: 600;
+    color: #9DA0A4;
+    font-size: 20px;
+    margin: 82px 0 28px;
+}
+

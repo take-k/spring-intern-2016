@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
+import Banner from './Banner'
+
 
 export default class App extends Component {
   constructor(props) {
@@ -33,6 +35,7 @@ export default class App extends Component {
     // 見た目の定義
     return(
       <div>
+      
         {this.state.data ? (
             <PortalSlider>
               {popularProject.projects.map((project) => {
