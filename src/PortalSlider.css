@@ -17,14 +17,19 @@
 
 .prev {
   position: absolute;
-  left: 0;
+  left: 5px;
   top: 220px;
 }
 
 .next {
   position: absolute;
-  right:0;
+  right:5px;
   top: 220px;
+}
+
+.button {
+  width:30px;
+
 }
 
 .box {

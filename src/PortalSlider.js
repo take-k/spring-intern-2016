@@ -13,21 +13,24 @@ export default class PortalSlider extends Component {
     }
   }
   onClickPrev(){
+    let nextIndex = this.state.currentIndex - 3 < 0 ? 0 : this.state.currentIndex - 3
     this.setState({
-      currentIndex:this.state.currentIndex - 3
+      currentIndex:nextIndex
+
     })
   }
   onClickNext(){
+    let nextIndex = this.state.currentIndex + 3 > this.props.children.length ?  this.state.currentIndex: this.state.currentIndex + 3
     this.setState({
-      currentIndex:this.state.currentIndex + 3
+      currentIndex:nextIndex
     })
   }
   render() {
     return (
       <div className={styles.base}>
         <h3 className={styles.label}>{this.props.title}</h3>
-        <a className={styles.prev} onClick={this.onClickPrev.bind(this)}>前へ</a>
-        <a className={styles.next} onClick={this.onClickNext.bind(this)}>次へ</a>
+        <a className={styles.prev} onClick={this.onClickPrev.bind(this)}><img className={styles.button} src="http://cdn2.hubspot.net/hub/375363/file-2234927864-png/success-previous-button.png?t=1453419008570" /></a>
+        <a className={styles.next} onClick={this.onClickNext.bind(this)}><img className={styles.button} src="http://cdn2.hubspot.net/hub/375363/file-2234927924-png/success-next-button.png?t=1453419008570"/></a>
         {
           <div className={styles.box}>
             {
