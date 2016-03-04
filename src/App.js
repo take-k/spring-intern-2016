@@ -29,6 +29,8 @@ export default class App extends Component {
   render() {
     let data = this.state.data
     let popularProject = data && data.sections[3]
+    let newgradProject = data && data.sections[4]
+    let internProject = data && data.sections[5]
     // 見た目の定義
     return(
       <div className={styles.container}>
@@ -46,7 +48,7 @@ export default class App extends Component {
             <div className={styles.section}>
               <PortalSlider>
                 {
-                  popularProject.projects.map((project) => {
+                  newgradProject.projects.map((project) => {
                     return <PortalProject project={project} key={project.id} />
                   })
                 }
@@ -55,7 +57,7 @@ export default class App extends Component {
             <div className={styles.section}>
               <PortalSlider>
                 {
-                  popularProject.projects.map((project) => {
+                  internProject.projects.map((project) => {
                     return <PortalProject project={project} key={project.id} />
                   })
                 }
