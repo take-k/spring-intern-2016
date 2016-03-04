@@ -33,13 +33,36 @@ export default class App extends Component {
     return(
       <div className={styles.container}>
         {data ? (
-            <PortalSlider>
-              {
-                popularProject.projects.map((project) => {
-                  return <PortalProject project={project} key={project.id} />
-                })
-              }
-            </PortalSlider>
+          <div>
+            <div className={styles.section}>
+              <PortalSlider>
+                {
+                  popularProject.projects.map((project) => {
+                    return <PortalProject project={project} key={project.id} />
+                  })
+                }
+              </PortalSlider>
+            </div>
+            <div className={styles.section}>
+              <PortalSlider>
+                {
+                  popularProject.projects.map((project) => {
+                    return <PortalProject project={project} key={project.id} />
+                  })
+                }
+              </PortalSlider>
+            </div>
+            <div className={styles.section}>
+              <PortalSlider>
+                {
+                  popularProject.projects.map((project) => {
+                    return <PortalProject project={project} key={project.id} />
+                  })
+                }
+              </PortalSlider>
+            </div>
+
+          </div>
         ):(
           <p>Now Loading...</p>
         )}
