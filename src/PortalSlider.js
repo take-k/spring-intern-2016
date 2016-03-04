@@ -25,6 +25,7 @@ export default class PortalSlider extends Component {
   render() {
     return (
       <div className={styles.base}>
+        <h3 className={styles.label}>{this.props.title}</h3>
         <a className={styles.prev} onClick={this.onClickPrev.bind(this)}>前へ</a>
         <a className={styles.next} onClick={this.onClickNext.bind(this)}>次へ</a>
         {

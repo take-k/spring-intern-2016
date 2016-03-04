@@ -37,7 +37,7 @@ export default class App extends Component {
         {data ? (
           <div>
             <div className={styles.section}>
-              <PortalSlider>
+              <PortalSlider title={popularProject.title}>
                 {
                   popularProject.projects.map((project) => {
                     return <PortalProject project={project} key={project.id} />
@@ -46,7 +46,7 @@ export default class App extends Component {
               </PortalSlider>
             </div>
             <div className={styles.section}>
-              <PortalSlider>
+              <PortalSlider title={newgradProject.title}>
                 {
                   newgradProject.projects.map((project) => {
                     return <PortalProject project={project} key={project.id} />
@@ -55,7 +55,7 @@ export default class App extends Component {
               </PortalSlider>
             </div>
             <div className={styles.section}>
-              <PortalSlider>
+              <PortalSlider title={internProject.title}>
                 {
                   internProject.projects.map((project) => {
                     return <PortalProject project={project} key={project.id} />
