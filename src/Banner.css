@@ -1,19 +1,19 @@
-.project-list-wrapper{
+.project_list_wrapper{
 		text-align: right;
 }
 
-.read-more{
+.read_more{
 	margin: 10px 10px 10px 10px;
     top: -50px;
     color: #00A4BB;
     font-size: 14px;
 }
 
-.project-lists{
+.project_lists{
 	list-style-type: none;
 }
 
-.banner-wrapper{
+.banner_wrapper{
 	display: list-item;
 	width: 248px;
 	text-align: left;
@@ -34,7 +34,7 @@
 }
 
 
-.overlay-wrapper{
+.overlay_wrapper{
 	position: relative;
     border-radius: 3px;
     overflow: hidden;
@@ -44,13 +44,16 @@
     border: 0;
 }
 
-.overlay-wrapper:hover{
+.overlay_wrapper:hover{
 	background-color: rgba(0,0,0,0.5);
 
 }
 
+.section_inner{
+}
 
-.icon-new{
+
+.icon_new{
 	font-size: 11px;
     font-weight: 600;
     height: 20px;
@@ -64,7 +67,7 @@
     border-radius: 3px;
     display: block;
 }
-.icon-feature{
+.icon_feature{
 	font-size: 11px;
 	font-weight: 600;
 	height: 20px;
@@ -78,12 +81,12 @@
 	display: block;
 	background: #1376ca;
 }
-.overlay-gray{
+.overlay_gray{
 	background-color: rgba(0,0,0,0.3);
     width: 100%;
     height: 100%;
 }
-.overlay-words{
+.overlay_words{
 	position: absolute;
     top: 0;
     left: 0;
@@ -96,7 +99,7 @@
     font-weight: 600;
 }
 
-.overlay-words:hover{
+.overlay_words:hover{
 	background-color: rgba(0,0,0,0.4);
 	color: #00C6E0;
 }

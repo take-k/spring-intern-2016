@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import styles from './App.css'
+import Banner from './Banner'
+
+
 
 export default class App extends Component {
   constructor(props) {
@@ -36,6 +39,11 @@ export default class App extends Component {
       <div className={styles.container}>
         {data ? (
           <div>
+            <div className={styles.section}>
+              <Banner banners={data.sections[1]}>
+              </Banner>
+            </div>
+
             <div className={styles.section}>
               <PortalSlider>
                 {
