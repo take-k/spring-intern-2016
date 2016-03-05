@@ -31,16 +31,8 @@ export default class App extends Component {
     })
   }
 
-  toggleProjectsPanel(){
-    this.setState({
-      showProjectsPanel:true
-    })
-  }
-
-  toggleDetailPanel(){
-    this.setState({
-      showDetailPanel:true
-    })
+  clickProject(project){
+    alert('project Clicked!')
   }
 
   render() {
@@ -62,11 +54,11 @@ export default class App extends Component {
             {
               projectsSections.map((section,index)=> {
                 return(
-                  <div className={styles.section}>
+                  <div className={styles.section} key = {index}>
                     <PortalSlider title={section.title}>
                       {
                         section.projects.map((project) => {
-                          return <PortalProject project={project} key={project.id} />
+                          return <PortalProject project={project} key={project.id} clickHandler={this.clickProject.bind(this)} />
                         })
                       }
                     </PortalSlider>
@@ -78,7 +70,7 @@ export default class App extends Component {
             {
               projectsSections.map((section,index)=> {
                 return(
-                  <SkyLight hideOnOverlayClicked ref={'projectsDialog' + index} dialogStyles={myDialogStyle} title="">
+                  <SkyLight hideOnOverlayClicked ref={'projectsDialog' + index} dialogStyles={myDialogStyle} title="" key = {index}>
                     <div>
                       {data ? (
                         <PortalPanel>
