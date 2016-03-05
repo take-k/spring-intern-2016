@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Header from './Header'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 import PortalProjectList from './PortalProjectList'
@@ -51,6 +52,7 @@ export default class App extends Component {
       <div className={styles.container}>
         {data ? (
           <div>
+            <Header/>
             {
               projectsSections.map((section,index)=> {
                 return(
